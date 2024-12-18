@@ -1,0 +1,320 @@
+/* Basic CSS Structure */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('images/MainBG.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: overlay;
+    color: white; /* Sets text color to white */
+}
+
+div {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7); /* Added shadow for better readability */
+}
+
+p {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7); /* Added shadow for better readability */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 2rem;
+    color: #fff;
+    background-color: #08a710;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #c71515;
+}
+
+.music-control {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#musicToggle, #musicUntoggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+#volumeSlider {
+    width: 8rem;
+    height: 0.3rem;
+}
+
+@media screen and (max-width: 600px) {
+    .music-control {
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+
+    #musicToggle, #musicUntoggle {
+        font-size: 1.2rem;
+    }
+
+    #volumeSlider {
+        width: 6rem;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+#volumeSlider {
+    width: 100px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    -webkit-appearance: none;
+}
+
+#volumeSlider:hover {
+    opacity: 1;
+}
+
+#volumeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #ffffff;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#volumeSlider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #ffffff;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+/* Global Responsive Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    font-size: 16px;
+}
+
+/* Responsive Typography */
+@media screen and (max-width: 1200px) {
+    html, body {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    html, body {
+        font-size: 12px;
+    }
+}
+
+/* Responsive Body and Background */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('images/MainBG.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: overlay;
+    color: white;
+}
+
+/* Responsive Gallery Styles */
+.gallery-body {
+    background-image: url('images/MainBG.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: overlay;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.gallery-container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.gallery-container h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #e94560;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+    padding: 1rem;
+    grid-auto-flow: dense;
+    width: 100%;
+}
+
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.image-wrapper.small {
+    grid-row: span 1;
+    grid-column: span 1;
+}
+
+.image-wrapper.medium {
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.image-wrapper.large {
+    grid-row: span 3;
+    grid-column: span 3;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-wrapper:hover .image-overlay {
+    opacity: 1;
+}
+
+.gallery-message {
+    text-align: center;
+    width: 90%;
+    max-width: 50rem;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.gallery-message p {
+    color: #ffffff;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.back-button {
+    display: inline-block;
+    margin: 1rem auto;
+    padding: 0.75rem 1.5rem;
+    background-color: #e94560;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1200px) {
+    .image-wrapper.large {
+        grid-row: span 2;
+        grid-column: span 2;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .image-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+        grid-gap: 0.5rem;
+    }
+
+    .image-wrapper.medium,
+    .image-wrapper.large {
+        grid-row: span 1;
+        grid-column: span 1;
+    }
+
+    .gallery-message {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .image-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+    }
+
+    .gallery-container h1 {
+        font-size: 2rem;
+    }
+}
