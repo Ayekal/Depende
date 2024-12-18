@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const imageGallery = document.getElementById('imageGallery');
     const images = [
-        'img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg', 
-        'img5.jpg', 'img6.jpg', 'img7.jpg', 'img8.jpg', 
-        'img9.jpg', 'img10.jpg', 'img11.jpg', 'img12.jpg', 
-        'img13.jpg', 'img14.jpg', 'img15.jpg'
+        './images/img1.jpg', './images/img2.jpg', './images/img3.jpg', './images/img4.jpg', 
+        './images/img5.jpg', './images/img6.jpg', './images/img7.jpg', './images/img8.jpg', 
+        './images/img9.jpg', './images/img10.jpg', './images/img11.jpg', './images/img12.jpg', 
+        './images/img13.jpg', './images/img14.jpg', './images/img15.jpg'
     ];
 
     // Duplicate images to fill more space and create a fuller gallery
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         imgWrapper.classList.add(randomSizeClass);
         
         const img = document.createElement('img');
-        img.src = `images/${imageName}`;
+        img.src = imageName;
         img.alt = `Memory ${imageName}`;
         img.loading = 'lazy'; // Improve performance
         
